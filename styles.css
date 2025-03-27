@@ -219,3 +219,41 @@ section {
         width: 100%; /* Teljes szélesség */
     }
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    padding: 5px;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button.edit-row {
+    background-color: #ffc107;
+    color: white;
+}
+
+button.delete-row {
+    background-color: #dc3545;
+    color: white;
+}
+
+button#add-row {
+    background-color: #28a745;
+    color: white;
+}
