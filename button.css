@@ -1,0 +1,38 @@
+button {
+    background-color: #0ea07b; /* Gomb alapértelmezett háttérszíne */
+    color: white; /* Szöveg színe */
+    border: none; /* Keret eltávolítása */
+    padding: 10px 20px; /* Belső margók (felső/alsó, bal/jobb) */
+    border-radius: 5px; /* Lekerekített sarkok */
+    cursor: pointer; /* Mutatóvá változik az egér */
+    font-size: 1rem; /* Szöveg mérete */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animáció hover-re */
+}
+
+button:hover {
+    background-color: #0c8a6b; /* Hover állapot háttérszíne */
+    transform: scale(1.05); /* Kicsit nagyobb lesz hover-re */
+}
+
+button:active {
+    background-color: #096a50; /* Aktív állapot háttérszíne */
+    transform: scale(0.95); /* Kicsit kisebb lesz kattintáskor */
+}
+
+.more {
+    background-color: #007bff; /* Kék háttérszín a "Tovább olvasom" gombhoz */
+    color: white;
+}
+
+.more:hover {
+    background-color: #0056b3; /* Sötétebb kék hover-re */
+}
+
+.fav {
+    background-color: #ff4081; /* Rózsaszín háttérszín a "Kedvencekhez adás" gombhoz */
+    color: white;
+}
+
+.fav:hover {
+    background-color: #c60055; /* Sötétebb rózsaszín hover-re */
+}

@@ -1,0 +1,221 @@
+/* Alapstílusok */
+html{
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column; 
+    list-style: center;
+    background-color: #0ee6a5;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+   
+    
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin:  0;
+    gap : 10px;
+}
+
+.header-kep {
+    
+    height: 150pt; 
+    width: auto; 
+    border-radius: 50%; 
+    float: right;
+}
+
+
+
+
+aside h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #00158d;
+}
+
+
+aside {
+   display: flex;
+    flex-direction: column; 
+    list-style: none;
+    position: fixed; 
+    top: 180pt; 
+    left: 0px; 
+    width: 150pt;
+    height: auto; 
+    padding: 1rem;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: left;
+}
+
+.pharagraf1{
+    background-color: #0d96cc;
+    color: rgb(7, 6, 6);
+    padding: 1rem;
+   
+    width: 80%;
+    text-align: center;
+    position: static;
+    
+}
+
+.pharagraf2{
+    background-color: #00b9da;
+    color: rgb(40, 0, 216);
+    padding: 1rem;
+    width: 80%;
+    text-align: center;
+    position: static;
+    
+}
+
+#blog1{
+    
+    background-color: #16c934;
+    color: rgb(47, 35, 163);
+    padding: 1rem;
+    
+    width: 80%;
+    text-align: center;
+    position: static;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: right;
+
+
+}
+
+#blog2{
+    background-color: #26c8ce;
+    color: rgb(47, 35, 163);
+    padding: 1rem;
+    
+    width: 80%;
+    text-align: center;
+    position: static;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: right;
+}
+
+#blog3{
+    background-color: #0ea07b;
+    color: rgb(47, 35, 163);
+    padding: 1rem;
+   
+    width: 80%;
+    text-align: center;
+    position: static;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: right;
+}
+
+#blog4{
+    background-color: #d2e2e9;
+    color: rgb(47, 35, 163);
+    padding: 1rem;
+  
+    width: 80%;
+    text-align: center;
+    position: static;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: right;
+}
+#blog5{
+    background-color: #17bdda;
+    color: rgb(50, 69, 177);
+    padding: 1rem;
+  
+    width: 80%;
+    text-align: center;
+    position: static;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: auto ;
+    float: right;
+}
+.table-image {
+    width: 100%;
+    max-width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: flex;
+    max-width: auto;
+    height: auto;
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* A szekciók egymás alatt helyezkednek el */
+    margin-left: 220px; /* A navigációs menü szélessége + távolság */
+    padding: 1rem;
+    width: calc(100% - 220px); /* A navigációs menü helyét figyelembe véve */
+}
+
+section {
+    display: flex;
+    flex-direction: column; /* A tartalom egymás alá kerül */
+    gap: 20px; /* Távolság a szekciók között */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    aside {
+        position: relative; /* Fixálás eltávolítása */
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%; /* Teljes szélesség */
+        margin-bottom: 1rem; /* Távolság a többi tartalomtól */
+    }
+
+    main {
+        margin-left: 0; /* A navigációs menü már nem foglal helyet */
+        width: 100%; /* Teljes szélesség */
+    }
+}
