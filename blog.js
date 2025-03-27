@@ -27,6 +27,8 @@ window.onload=function(){
 
     }
 
+    handleComments();
+
 }
 
 function more(event){
@@ -73,4 +75,42 @@ function fav(event){
         button.textContent='Eltávolítom a kedvencekből 💔';
     }
 
+}
+
+
+function handleComments() {
+    // Hozzászólás hozzáadása
+    const addCommentButtons = document.querySelectorAll(".add-comment");
+
+    addCommentButtons.forEach(button => {
+        button.addEventListener("click", event => {
+            const article = button.closest("article");
+            const commentInput = article.querySelector(".comment-input");
+            const commentsList = article.querySelector(".comments-list");
+
+            const commentText = commentInput.value.trim();
+            if (commentText === "") {
+                alert("A hozzászólás nem lehet üres!");
+                return;
+            }
+
+            // Hozzászólás hozzáadása a listához
+            const listItem = document.createElement("li");
+            listItem.textContent = commentText;
+
+            // Törlés gomb hozzáadása
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Törlés";
+            deleteButton.classList.add("delete-comment");
+            deleteButton.addEventListener("click", () => {
+                listItem.remove();
+            });
+
+            listItem.appendChild(deleteButton);
+            commentsList.appendChild(listItem);
+
+            // Szövegmező ürítése
+            commentInput.value = "";
+        });
+    });
 }
