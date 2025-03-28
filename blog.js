@@ -52,6 +52,8 @@ window.onload=function(){
 
 }
 
+
+
 function more(event){
     let button = event.currentTarget;
     let article = button.closest('article');

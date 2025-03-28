@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Média Galéria</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+    
 </head>
+
 <body>
     <header>
         <h1>Média Galéria</h1>
@@ -19,14 +22,28 @@
     </header>
 
     <main>
-        <h2>Képek és Videók</h2>
-        <div class="gallery">
-            <img src="sutemenyek.jpeg" alt="Kép 1">
-            <img src="keksz.jpg" alt="Kép 2">
-            <img src="viragok.jpg" alt="Kép 3">
-            <img src="kosarkak.jpg" alt="Kép 4">
-            
-        </div>
+        <section id="gallery">
+            <h2>Képgaléria</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="kosarkak.jpg" alt="Fehércsokis-citromos kosárkák">
+                    <p>Fehércsokis-citromos kosárkák</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="viragok.jpg" alt="Lekváros virágok">
+                    <p>Lekváros virágok</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="rolo.jpg" alt="Kókuszos roló">
+                    <p>Kókuszos roló</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="keksz.jpg" alt="Oreoval töltött keksz">
+                    <p>Oreoval töltött keksz</p>
+                </div>
+            </div>
+        </section>
     </main>
+    <script src="media.js"></script>
 </body>
 </html>
