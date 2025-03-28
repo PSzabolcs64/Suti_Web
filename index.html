@@ -12,6 +12,7 @@
      <link rel="stylesheet" href="styles.css">
      <link rel="stylesheet" href="button.css">
      <link rel="stylesheet" href="Hozzaszolas.css">
+     <link rel="stylesheet" href="table.css">
     
     </head>
 
@@ -295,34 +296,30 @@
                  </article>
                 </section>
 
+                
                 <section>
                     <article id="blog5">
-                        <h2>Kepek</h2>
-                        <time datetime="2024-01-02">2023. szeptember 20.</time>
-                        <h1>Sütemények képei</h1>
-                        <section>
-                    <article id="blog5">
-                        <h2>Kepek</h2>
-                        <time datetime="2024-01-02">2023. szeptember 20.</time>
-                        <h1>Sütemények képei</h1>
+                        <h2>Recept</h2>
+                        <time datetime="2024-01-02"><span id="recipe-date"></span></time>
+                        <h1>Recept Szerkesztés</h1>
                         <table id="editable-table" border="1">
                             <thead>
                                 <tr>
-                                    <th>Oszlop 1</th>
-                                    <th>Oszlop 2</th>
-                                    <th>Oszlop 3</th>
-                                    <th>Oszlop 4</th>
-                                    <th>Oszlop 5</th>
-                                    <th>Művelet</th>
+                                    <th>Liszt [kg]</th>
+                                    <th>Cukor [kg]</th>
+                                    <th>So [kg]</th>
+                                    <th>Tojás [db]</th>
+                                    <th>Víz [l]</th>
+                                    <th>Szerkesztés</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Lorem</td>
-                                    <td>Ipsum</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
                                     <td>
                                         <button class="edit-row">✏️</button>
                                         <button class="delete-row">❌</button>
@@ -331,11 +328,12 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="2">Összesen</td>
+                                    <td id="sum-col-1">0</td>
+                                    <td id="sum-col-2">0</td>
                                     <td id="sum-col-3">0</td>
                                     <td id="sum-col-4">0</td>
                                     <td id="sum-col-5">0</td>
-                                    <td></td>
+                                    <td>Összesen</td>
                                 </tr>
                                 <tr>
                                     <td><input type="text" id="new-col-1" placeholder="Oszlop 1"></td>
@@ -350,14 +348,13 @@
                  </article>
                 </section>
 
-                 </article>
-                </section>
+                 
 
 
 
         </main> 
         <footer>
-            <p>&copy; <span id="year"></span> A kedvenc Süti. Minden jog fenntartva.</p>
+            <p>&copy; <span id="footer-year"></span> A kedvenc Süti. Minden jog fenntartva.</p>
         </footer>
     </body>
 

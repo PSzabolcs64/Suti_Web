@@ -1,8 +1,25 @@
 
 window.onload=function(){
 
-    $('#year').textContent = new Date().getFullYear();
-
+    /*$('#year').textContent = new Date().getFullYear();*/
+    
+     // Az aktuális dátum lekérése
+     const currentDate = new Date();
+     const year = currentDate.getFullYear();
+     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Hónap (1-12)
+     const day = String(currentDate.getDate()).padStart(2, '0'); // Nap (1-31)
+ 
+     // Recept dátum frissítése
+     const recipeDateElement = document.getElementById("recipe-date");
+     if (recipeDateElement) {
+         recipeDateElement.textContent = `${year}-${month}-${day}`;
+     }
+ 
+     // Lábjegyzet év frissítése
+     const footerYearElement = document.getElementById("footer-year");
+     if (footerYearElement) {
+         footerYearElement.textContent = `${year}-${month}-${day}`;
+     }
     let ps= $$('article p');
     for(let p of ps){
         p.style.display='none';
@@ -127,16 +144,21 @@ function handleComments() {
 // Frissíti az oszlopok összegét
 function updateSums() {
     let table = document.getElementById("editable-table");
-    let sumCol3 = 0, sumCol4 = 0, sumCol5 = 0;
+    let sumCol1 = 0, sumCol2 = 0,sumCol3 = 0, sumCol4 = 0, sumCol5 = 0;
 
     const rows = table.querySelectorAll("tbody tr");
     for (let row of rows) {
         let cells = row.querySelectorAll("td");
+
+        sumCol1 += parseFloat(cells[0]?.textContent) || 0;
+        sumCol2 += parseFloat(cells[1]?.textContent) || 0;
         sumCol3 += parseFloat(cells[2]?.textContent) || 0;
         sumCol4 += parseFloat(cells[3]?.textContent) || 0;
         sumCol5 += parseFloat(cells[4]?.textContent) || 0;
     }
 
+    document.getElementById("sum-col-1").textContent = sumCol1;
+    document.getElementById("sum-col-2").textContent = sumCol2;
     document.getElementById("sum-col-3").textContent = sumCol3;
     document.getElementById("sum-col-4").textContent = sumCol4;
     document.getElementById("sum-col-5").textContent = sumCol5;
@@ -144,7 +166,7 @@ function updateSums() {
 
 // Szerkesztés funkció
 function editRow(event) {
-    let button = event.currentTarget;
+    let button = event.target;
     let row = button.closest("tr");
 
     if (!row) {
@@ -169,7 +191,7 @@ function editRow(event) {
 
 // Mentés funkció
 function saveRow(event) {
-    let button = event.currentTarget;
+    let button = event.target;
     let row = button.closest("tr");
 
     if (!row) {
@@ -194,7 +216,7 @@ function saveRow(event) {
 
 // Törlés funkció
 function deleteRow(event) {
-    let button = event.currentTarget;
+    let button = event.target;
     let row = button.closest("tr");
 
     if (!row) {
@@ -214,7 +236,7 @@ function addRow() {
     for (let i = 1; i <= 5; i++) {
         let cell = document.createElement("td");
         let input = document.getElementById(`new-col-${i}`);
-        cell.textContent = input.value || (i > 2 ? "0" : "");
+        cell.textContent = input.value || (i >= 1 ? "0" : "");
         newRow.appendChild(cell);
         input.value = ""; // Szövegmezők ürítése
     }
@@ -250,6 +272,7 @@ function initializeTable(event) {
     // Kezdeti összeg frissítése
     updateSums();
 }
+
 
 
 

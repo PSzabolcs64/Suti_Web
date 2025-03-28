@@ -1,0 +1,60 @@
+/* Alapértelmezett táblázat stílus */
+#editable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+#editable-table th, #editable-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Táblázat fejléc */
+#editable-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Reszponzív táblázat kisebb képernyőkhöz */
+@media screen and (max-width: 768px) {
+    #editable-table {
+        border: 0;
+    }
+
+    #editable-table thead {
+        display: none; /* Fejléc elrejtése kisebb képernyőkön */
+    }
+
+    #editable-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #editable-table td {
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    #editable-table td::before {
+        content: attr(data-label); /* Az oszlop neve */
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    #editable-table td:last-child {
+        border-bottom: 0;
+    }
+}
